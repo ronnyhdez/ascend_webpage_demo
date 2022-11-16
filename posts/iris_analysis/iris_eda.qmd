@@ -1,0 +1,50 @@
+---
+title: "iris Analysis"
+editor: visual
+---
+
+
+# Iris
+
+This is my iris EDA
+
+
+## Library
+
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(janitor)
+library(rmarkdown)
+library(plotly)
+```
+
+## Data
+
+```{r}
+iris_clean <- iris %>% 
+  clean_names()
+
+iris_clean %>% 
+  paged_table()
+```
+
+
+## Visualization
+
+```{r}
+iris_plot <- iris_clean %>% 
+  ggplot(aes(x = petal_length, y = petal_width, color = species)) +
+  geom_point() +
+  scale_color_viridis_d() +
+  theme_light(base_size = 16)
+
+iris_plot
+```
+
+## Interactive plot
+
+```{r}
+ggplotly(iris_plot)
+```
+
