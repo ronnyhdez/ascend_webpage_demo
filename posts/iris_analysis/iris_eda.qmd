@@ -1,6 +1,9 @@
 ---
 title: "iris Analysis"
-editor: visual
+author: "Ronny"
+date: "2022-11-16"
+categories: [plotly, iris, analysis]
+image: "iris.jpg"
 ---
 
 
